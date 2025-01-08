@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef, useCallback, useEffect } from "react"
-import { motion, useAnimation } from "motion/react"
+import { useAnimation } from "motion/react"
 import { Slider } from "@/components/ui/slider"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -23,7 +23,7 @@ export default function HalftoneGenerator() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const outputCanvasRef = useRef<HTMLCanvasElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
-  const animationRef = useRef<number>()
+  const animationRef = useRef<number | null>(null)
   const controls = useAnimation()
 
   const processFrame = useCallback((source: HTMLVideoElement | HTMLImageElement) => {
